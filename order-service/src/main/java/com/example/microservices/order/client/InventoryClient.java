@@ -5,7 +5,7 @@ import org.springframework.web.service.annotation.GetExchange;
 
 public interface InventoryClient {
 
-    @GetExchange("inventory")
+    @GetExchange("/api/inventory")
     boolean isInStock(@RequestParam String skuCode, @RequestParam Integer quantity);
 
 }
