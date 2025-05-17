@@ -4,16 +4,16 @@ import com.example.microservices.product.dto.ProductRequest;
 import com.example.microservices.product.dto.ProductResponse;
 import com.example.microservices.product.model.Product;
 import com.example.microservices.product.repository.ProductRepository;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class ProductService {
 
-    private final ProductRepository productRepository;
+    @Autowired
+    private ProductRepository productRepository;
 
     public ProductResponse createProduct(ProductRequest productRequest) {
         Product product = Product.builder()
